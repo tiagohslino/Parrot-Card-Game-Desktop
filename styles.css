@@ -1,0 +1,14 @@
+.cartas-do-jogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 770px; /*caso sem responsividade, apenas 1 "ul" */
+    background-color: aqua;
+}
+
+.cartas-do-jogo li img {
+    width: 100px;
+    height: 150px;
+    padding-left: 10px;
+}
