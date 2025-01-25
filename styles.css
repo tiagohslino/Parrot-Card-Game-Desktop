@@ -1,0 +1,24 @@
+body {
+    text-align: center;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+}
+
+.card-back {
+    height: 146px;
+    width: 117px;
+    margin: 0 17px 0 17px;
+    background-color: #A7E9AF;
+    border: 1px solid #99CEA8;
+    border-radius: 5px;
+}
+
+.card-back img {
+    height: 100px;
+    width: 100px;
+    padding: 24px 7px 22px 10px;
+}
+
