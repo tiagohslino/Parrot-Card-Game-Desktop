@@ -7,7 +7,13 @@ while ((numCards % 2 != 0) || (numCards < 4) || (numCards > 14)){
 }
 
 const cardsArray = [
-                "assets/back.png",
+                "assets/bobrossparrot.gif",
+                "assets/explodyparrot.gif",
+                "assets/fiestaparrot.gif",
+                "assets/metalparrot.gif",
+                "assets/revertitparrot.gif",
+                "assets/tripletsparrot.gif",
+                "assets/unicornparrot.gif",
 ];
 
 window.onload = function distributeTotalCards(){
@@ -15,7 +21,7 @@ window.onload = function distributeTotalCards(){
     let cardsHTML = "";
 
     for (let i = 0; i < numCards; i++) {
-        cardsHTML += `<li class="card-back"><img src="assets/back.png" /></li>`;
+        cardsHTML += `<li class="card-back" onclick="revealCard(this)"><img src="assets/back.png" /></li>`;
             alert(cardsHTML);
       }
     
@@ -24,3 +30,7 @@ window.onload = function distributeTotalCards(){
 }
 
 distributeTotalCards();
+
+function revealCard (frontCard){
+    frontCard.style.backgroundColor = "#FFFF00";
+}

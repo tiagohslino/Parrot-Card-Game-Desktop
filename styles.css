@@ -17,10 +17,6 @@ body {
     border-radius: 5px;
 }
 
-.card-back :hover {
-    background-color: red;
-}
-
 .card-back img {
     height: 100px;
     width: 100px;
