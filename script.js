@@ -6,3 +6,21 @@ while ((numCards % 2 != 0) || (numCards < 4) || (numCards > 14)){
     numCards = parseInt(userNumCards);
 }
 
+const cardsArray = [
+                "assets/back.png",
+];
+
+window.onload = function distributeTotalCards(){
+    const cardsTotal = document.querySelector(".cards-container");
+    let cardsHTML = "";
+
+    for (let i = 0; i < numCards; i++) {
+        cardsHTML += `<li class="card-back"><img src="assets/back.png" /></li>`;
+            alert(cardsHTML);
+      }
+    
+      cardsTotal.innerHTML = cardsHTML;
+      alert(cardsHTML);
+}
+
+distributeTotalCards();
