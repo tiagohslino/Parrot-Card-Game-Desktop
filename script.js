@@ -16,21 +16,32 @@ const cardsArray = [
                 "assets/unicornparrot.gif",
 ];
 
+let cardsHTML = "";
 window.onload = function distributeTotalCards(){
     const cardsTotal = document.querySelector(".cards-container");
-    let cardsHTML = "";
+    
 
     for (let i = 0; i < numCards; i++) {
-        cardsHTML += `<li class="card-back" onclick="revealCard(this)"><img src="assets/back.png" /></li>`;
+        cardsHTML += `<li class="card-back" id="cardId${i+1}" onclick="revealCard(this)"><img src="assets/back.png" /></li>`;
             alert(cardsHTML);
+            
       }
     
       cardsTotal.innerHTML = cardsHTML;
-      alert(cardsHTML);
 }
 
 distributeTotalCards();
 
 function revealCard (frontCard){
-    frontCard.style.backgroundColor = "#FFFF00";
+    
+    const selectedID = frontCard.id;
+    const selectedCard = document.getElementById(selectedID);
+    
+    for (let j=0; j < numCards; j++){
+        if (selectedID == `cardId${j+1}`){
+            selectedCard.outerHTML = `<li class="card-back" id="cardId${j+1}" onclick="revealCard(this)"><img src="${cardsArray[j]}" /></li>`;
+        }
+    }
+
 }
+
