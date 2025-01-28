@@ -1,5 +1,6 @@
 let userNumCards = prompt("Com quantas cartas você quer jogar? (Somente números pares)");
 let numCards = parseInt(userNumCards);
+let cardsHTML = "";
 
 while ((numCards % 2 != 0) || (numCards < 4) || (numCards > 14)){
     userNumCards = prompt("Com quantas cartas você quer jogar? (Somente números pares)");
@@ -7,27 +8,39 @@ while ((numCards % 2 != 0) || (numCards < 4) || (numCards > 14)){
 }
 
 const cardsArray = [
-                "assets/bobrossparrot.gif",
-                "assets/explodyparrot.gif",
-                "assets/fiestaparrot.gif",
-                "assets/metalparrot.gif",
-                "assets/revertitparrot.gif",
-                "assets/tripletsparrot.gif",
-                "assets/unicornparrot.gif",
+    "assets/bobrossparrot.gif",
+    "assets/explodyparrot.gif",
+    "assets/fiestaparrot.gif",
+    "assets/metalparrot.gif",
+    "assets/revertitparrot.gif",
+    "assets/tripletsparrot.gif",
+    "assets/unicornparrot.gif",
 ];
 
-let cardsHTML = "";
+const finalArray = [];
+
+    for (let k=0; k<(numCards/2); k++) {
+        finalArray.push(cardsArray[k]);
+        finalArray.push(cardsArray[k]);
+    }
+
+
+finalArray.sort(comparador);
+
+function comparador() {
+    return Math.random() - 0.5;
+}
+
+console.log(finalArray);
+
 window.onload = function distributeTotalCards(){
     const cardsTotal = document.querySelector(".cards-container");
-    
 
     for (let i = 0; i < numCards; i++) {
-        cardsHTML += `<li class="card-back" id="cardId${i+1}" onclick="revealCard(this)"><img src="assets/back.png" /></li>`;
-            alert(cardsHTML);
-            
+            cardsHTML += `<li class="card-back" id="cardId${i+1}" onclick="revealCard(this)"><img src="assets/back.png" /></li>`;
       }
     
-      cardsTotal.innerHTML = cardsHTML;
+    cardsTotal.innerHTML = cardsHTML;
 }
 
 distributeTotalCards();
@@ -39,9 +52,11 @@ function revealCard (frontCard){
     
     for (let j=0; j < numCards; j++){
         if (selectedID == `cardId${j+1}`){
-            selectedCard.outerHTML = `<li class="card-back" id="cardId${j+1}" onclick="revealCard(this)"><img src="${cardsArray[j]}" /></li>`;
+            selectedCard.outerHTML = `<li class="card-back" id="cardId${j+1}" 
+            onclick="revealCard(this)"><img src="${finalArray[j]}" /></li>`;
         }
     }
-
+    
+    
 }
 
