@@ -17,14 +17,23 @@ body {
     border-radius: 5px;
 }
 
-.card-back img {
+.card-front {
+    height: 146px;
+    width: 117px;
+    margin: 0 17px 0 17px;
+    background-color: #A7E9AF;
+    border: 1px solid #99CEA8;
+    border-radius: 5px;
+}
+
+img {
     height: 100px;
     width: 100px;
     padding: 24px 7px 22px 10px;
 }
 
-.card-back :hover {
+.toggle {
     transform: rotateY(180deg);
-    transition: 2s;
+    transition: 1s;
 }
 

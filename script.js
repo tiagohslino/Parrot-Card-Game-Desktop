@@ -5,6 +5,7 @@ let cont = 0;
 let compareCard = "";
 let activeCard = "";
 let totalPoints = 0;
+let move = 0;
 
 while ((numCards % 2 != 0) || (numCards < 4) || (numCards > 14)){
     userNumCards = prompt("Com quantas cartas você quer jogar? (Somente números pares)");
@@ -28,7 +29,6 @@ const finalArray = [];
         finalArray.push(cardsArray[k]);
     }
 
-
 finalArray.sort(comparador);
 
 function comparador() {
@@ -39,15 +39,13 @@ console.log(finalArray);
 
 window.onload = function distributeTotalCards(){
     const cardsTotal = document.querySelector(".cards-container");
-    
 
     for (let i = 0; i < numCards; i++) {
             cardsHTML += `<li class="card-back" id="cardId${i+1}" 
             onclick="revealCard(this)"><img src="assets/back.png" /></li>`;
-      }
+    }
     
     cardsTotal.innerHTML = cardsHTML;
-    
 }
 
 distributeTotalCards();
@@ -56,14 +54,14 @@ function revealCard (frontCard){
     
     const selectedID = frontCard.id;
     const selectedCard = document.getElementById(selectedID);
-    const placarContainer = document.querySelector(".placar");
-    
-    
+    const scoreContainer = document.querySelector(".placar");
+    const cardFace = document.querySelector(".card-front");
 
     for (let j=0; j < numCards; j++){
         if (selectedID == `cardId${j+1}`){
-            selectedCard.outerHTML = `<li class="card-back" id="cardId${j+1}" 
-            onclick="revealCard(this)"><img src="${finalArray[j]}" /></li>`;   
+            selectedCard.outerHTML = `<li class="card-front" id="cardId${j+1}" 
+            onclick="revealCard(this)"><img src="${finalArray[j]}" /></li>`;
+            cardFace.classList.toggle("toggle");   
             activeCard = `${finalArray[j]}`;
         }     
     }
@@ -83,11 +81,11 @@ function revealCard (frontCard){
             cont = -1;     
         }
     }
-
-    cont++;
-
-    placarContainer.innerHTML = `<div class="placar">PONTOS = ${totalPoints}</div>`;
  
+    cont++;
+    move++;
     
+    scoreContainer.innerHTML = `<div class="score">PONTOS = ${totalPoints}</div> 
+                                <div class="moves">JOGADAS = ${move}</div>`;
 }
 
