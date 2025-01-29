@@ -67,14 +67,11 @@ function revealCard (frontCard){
     }
     
     if (cont == 0) {
-        compareCard = activeCard;
-        alert("salvando");
-        
+        compareCard = activeCard;        
     }
 
     if (cont == 1) {
         if (compareCard == activeCard) {
-            alert("pontuou!");
             totalPoints++;
             cont = -1;   
         } else {
