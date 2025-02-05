@@ -5,7 +5,8 @@ body {
     font-family: Roboto;
     font-size: 56px;
     font-weight: 700;
-    
+    background-color: #EEF9BF;
+
 }
 
 .cards-container {
@@ -13,12 +14,31 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 0 100px;
+    margin: 0 109px;
+}
+
+h1 {
+    font-family: Roboto;
+    font-size: 56px;
+    font-weight: 700;
+    padding: 40px 0 27px 0;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #75B79E;
+    margin: 0 10px;
+}
+
+@media only screen and (max-width: 523px) {
+    h1 {
+        font-family: Roboto;
+        font-size: 36px;
+    }
 }
 
 .card {
-    height: 146px;
-    width: 117px;
+    min-height: 146px;
+    min-width: 117px;
     margin: 17px;
     background-color: #A7E9AF;
     border: 1px solid #99CEA8;
@@ -43,7 +63,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #A7E9AF;
+    transform: rotateY(180deg);
 }
+
 
 .card-back {
     position: absolute;
@@ -56,16 +79,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.card-back {
     background-color: #A7E9AF;
     transform: rotateY(0deg);
-}
-
-.card-front {
-    background-color: #A7E9AF;
-    transform: rotateY(180deg);
 }
 
 .card img {
