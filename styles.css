@@ -3,37 +3,68 @@ body {
 }
 
 .cards-container {
-    display: flex;
+    display: grid; 
+    grid-template-columns: repeat(4, 117px); 
+    grid-gap: 17px; 
     justify-content: center;
-    flex-wrap: wrap;
 }
 
-.card-back {
+.card {
     height: 146px;
     width: 117px;
-    margin: 0 17px 0 17px;
     background-color: #A7E9AF;
     border: 1px solid #99CEA8;
     border-radius: 5px;
+    cursor: pointer; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
 }
 
 .card-front {
-    height: 146px;
-    width: 117px;
-    margin: 0 17px 0 17px;
-    background-color: #A7E9AF;
-    border: 1px solid #99CEA8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
     border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-img {
+.card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-back {
+    background-color: #A7E9AF;
+    transform: rotateY(0deg);
+}
+
+.card-front {
+    background-color: #A7E9AF;
+    transform: rotateY(180deg);
+}
+
+.card img {
     height: 100px;
     width: 100px;
-    padding: 24px 7px 22px 10px;
 }
 
 .toggle {
     transform: rotateY(180deg);
-    transition: 1s;
 }
-
