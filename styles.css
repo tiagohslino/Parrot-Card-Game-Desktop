@@ -1,26 +1,25 @@
 body {
     text-align: center;
+    justify-content: center;
+    align-items: center;
     font-family: Roboto;
-font-size: 56px;
-font-weight: 700;
-line-height: 65.63px;
-letter-spacing: -0.004em;
-text-align: left;
-text-underline-position: from-font;
-text-decoration-skip-ink: none;
-
+    font-size: 56px;
+    font-weight: 700;
+    
 }
 
 .cards-container {
-    display: grid; 
-    grid-template-columns: repeat(4, 117px); 
-    grid-gap: 17px; 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
+    padding: 0 100px;
 }
 
 .card {
     height: 146px;
     width: 117px;
+    margin: 17px;
     background-color: #A7E9AF;
     border: 1px solid #99CEA8;
     border-radius: 5px;

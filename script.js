@@ -97,7 +97,7 @@ function handleMatch() {
 
     if (document.querySelectorAll('.card').length === document.querySelectorAll('.card.toggle').length) {
         setTimeout(() => {
-            alert(`You won in ${moves} moves!`);
+            alert(`Você venceu em ${moves} jogadas`);
         }, 500);
     }
 }
