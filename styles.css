@@ -1,5 +1,14 @@
 body {
     text-align: center;
+    font-family: Roboto;
+font-size: 56px;
+font-weight: 700;
+line-height: 65.63px;
+letter-spacing: -0.004em;
+text-align: left;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+
 }
 
 .cards-container {
